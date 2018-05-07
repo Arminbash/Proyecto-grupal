@@ -1,0 +1,47 @@
+F:\AppicationPymes\PymesS.A\Entity\bin\Debug\Entity.dll.config
+F:\AppicationPymes\PymesS.A\Entity\bin\Debug\Entity.dll
+F:\AppicationPymes\PymesS.A\Entity\bin\Debug\Entity.pdb
+F:\AppicationPymes\PymesS.A\Entity\bin\Debug\EntityFramework.dll
+F:\AppicationPymes\PymesS.A\Entity\bin\Debug\EntityFramework.SqlServer.dll
+F:\AppicationPymes\PymesS.A\Entity\bin\Debug\Microsoft.SqlServer.Types.dll
+F:\AppicationPymes\PymesS.A\Entity\bin\Debug\EntityFramework.xml
+F:\AppicationPymes\PymesS.A\Entity\bin\Debug\EntityFramework.SqlServer.xml
+F:\AppicationPymes\PymesS.A\Entity\obj\Debug\Entity.dll
+F:\AppicationPymes\PymesS.A\Entity\obj\Debug\Entity.pdb
+F:\AppicationPymes\PymesS.A\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+D:\Eddy\Mis Documentos\Visual Studio 2015\Projects\PymesS.A\Entity\bin\Debug\Entity.dll.config
+D:\Eddy\Mis Documentos\Visual Studio 2015\Projects\PymesS.A\Entity\bin\Debug\Entity.dll
+D:\Eddy\Mis Documentos\Visual Studio 2015\Projects\PymesS.A\Entity\bin\Debug\Entity.pdb
+D:\Eddy\Mis Documentos\Visual Studio 2015\Projects\PymesS.A\Entity\bin\Debug\EntityFramework.dll
+D:\Eddy\Mis Documentos\Visual Studio 2015\Projects\PymesS.A\Entity\bin\Debug\EntityFramework.SqlServer.dll
+D:\Eddy\Mis Documentos\Visual Studio 2015\Projects\PymesS.A\Entity\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\Eddy\Mis Documentos\Visual Studio 2015\Projects\PymesS.A\Entity\bin\Debug\EntityFramework.xml
+D:\Eddy\Mis Documentos\Visual Studio 2015\Projects\PymesS.A\Entity\bin\Debug\EntityFramework.SqlServer.xml
+D:\Eddy\Mis Documentos\Visual Studio 2015\Projects\PymesS.A\Entity\obj\Debug\Entity.dll
+D:\Eddy\Mis Documentos\Visual Studio 2015\Projects\PymesS.A\Entity\obj\Debug\Entity.pdb
+D:\Eddy\Mis Documentos\Visual Studio 2015\Projects\PymesS.A\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+C:\Users\Arminbash\Documents\GitHub\Pymes--master\PymesS.A\Entity\bin\Debug\Entity.dll.config
+C:\Users\Arminbash\Documents\GitHub\Pymes--master\PymesS.A\Entity\bin\Debug\Entity.dll
+C:\Users\Arminbash\Documents\GitHub\Pymes--master\PymesS.A\Entity\bin\Debug\Entity.pdb
+C:\Users\Arminbash\Documents\GitHub\Pymes--master\PymesS.A\Entity\bin\Debug\EntityFramework.dll
+C:\Users\Arminbash\Documents\GitHub\Pymes--master\PymesS.A\Entity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Arminbash\Documents\GitHub\Pymes--master\PymesS.A\Entity\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Arminbash\Documents\GitHub\Pymes--master\PymesS.A\Entity\bin\Debug\EntityFramework.xml
+C:\Users\Arminbash\Documents\GitHub\Pymes--master\PymesS.A\Entity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Arminbash\Documents\GitHub\Pymes--master\PymesS.A\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+C:\Users\Arminbash\Documents\GitHub\Pymes--master\PymesS.A\Entity\obj\Debug\Entity.dll
+C:\Users\Arminbash\Documents\GitHub\Pymes--master\PymesS.A\Entity\obj\Debug\Entity.pdb
+C:\Users\Arminbash\Documents\GitHub\intri-Pymes-MVC5\PymesS.A\Entity\bin\Debug\Entity.dll.config
+C:\Users\Arminbash\Documents\GitHub\intri-Pymes-MVC5\PymesS.A\Entity\bin\Debug\Entity.dll
+C:\Users\Arminbash\Documents\GitHub\intri-Pymes-MVC5\PymesS.A\Entity\bin\Debug\Entity.pdb
+C:\Users\Arminbash\Documents\GitHub\intri-Pymes-MVC5\PymesS.A\Entity\bin\Debug\EntityFramework.dll
+C:\Users\Arminbash\Documents\GitHub\intri-Pymes-MVC5\PymesS.A\Entity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Arminbash\Documents\GitHub\intri-Pymes-MVC5\PymesS.A\Entity\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Arminbash\Documents\GitHub\intri-Pymes-MVC5\PymesS.A\Entity\bin\Debug\nunit.framework.dll
+C:\Users\Arminbash\Documents\GitHub\intri-Pymes-MVC5\PymesS.A\Entity\bin\Debug\EntityFramework.xml
+C:\Users\Arminbash\Documents\GitHub\intri-Pymes-MVC5\PymesS.A\Entity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Arminbash\Documents\GitHub\intri-Pymes-MVC5\PymesS.A\Entity\bin\Debug\nunit.framework.pdb
+C:\Users\Arminbash\Documents\GitHub\intri-Pymes-MVC5\PymesS.A\Entity\bin\Debug\nunit.framework.xml
+C:\Users\Arminbash\Documents\GitHub\intri-Pymes-MVC5\PymesS.A\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+C:\Users\Arminbash\Documents\GitHub\intri-Pymes-MVC5\PymesS.A\Entity\obj\Debug\Entity.dll
+C:\Users\Arminbash\Documents\GitHub\intri-Pymes-MVC5\PymesS.A\Entity\obj\Debug\Entity.pdb

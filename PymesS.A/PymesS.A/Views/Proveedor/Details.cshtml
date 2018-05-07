@@ -1,0 +1,62 @@
+﻿@model Entity.Proveedor
+
+@{
+    ViewBag.Title = "Detalles de Proveedor";
+    Layout = "~/Views/Shared/_Menubar.cshtml";
+}
+
+<div class="container-fluid" style="position:relative; top:20px; right:-300px;">
+    <div class="row">
+        <div class="col-md-9">
+            <ol class="breadcrumb">
+                <li><a href="~/">Inventario</a></li>
+                <li class="active">@(Model.Nombres)</li>
+            </ol>
+            <div>
+                <h4>Proveedor</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Nombres)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Nombres)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Correo)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Correo)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Telefono)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Telefono)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.activo)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.activo)
+                    </dd>
+
+                </dl>
+                <p>
+                    <a class="btn btn-primary" href="~/Proveedor/Edit/@Model.IdProveedor" title="Editar">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </a>
+                    <a href="~/Proveedor/Index" class="btn btn-success">Regresar a Lista</a>
+                </p>
+            </div>
+           
+            </div>
+</div>
+</div>

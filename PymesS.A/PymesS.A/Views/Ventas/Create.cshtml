@@ -1,0 +1,331 @@
+﻿@*@model Entity.Venta*@
+@model PymesS.A.ViewModel.ModelVenta
+@using PymesS.A.Models
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Realizar una venta</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Venta</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Venta.IdPersona, "Cliente", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IdPersona", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Venta.IdPersona, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.Venta.IdUsuario, "IdUsuario", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IdUsuario", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Venta.IdUsuario, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Venta.Fecha, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Venta.Fecha, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Venta.Fecha, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Venta.Total, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Venta.Total, new { htmlAttributes = new { @class = "form-control" , id="totalPrecio" ,value="0"} })
+                @Html.ValidationMessageFor(model => model.Venta.Total, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.Venta.activo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Venta.activo)
+                    @Html.ValidationMessageFor(model => model.Venta.activo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>*@
+        <div class="escondido hidden form-group row" style="display: none !important;">
+
+
+        </div>
+        <div style="display: none !important;" class="form-group row col-md-offset-6 hidden">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" id="enviar" />
+            </div>
+        </div>
+    </div>
+}
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" href="#home" role="tab" data-toggle="tab">Lista de Compra</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#menuPro" role="tab" data-toggle="tab">Inventario</a>
+    </li>
+</ul>
+@* Panel de tabs *@
+
+<div class="tab-content">
+
+    <div id="home" role="tabpanel" class="tab-pane active">
+        <h3>Lista de Compra</h3>
+        <table id="" class="table table-hover-table-bordered  ">
+            <thead>
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Tipo
+                    </th>
+                    <th>
+                        Precio
+                    </th>
+                    <th>
+                        Cantidad
+                    </th>
+                    <th>
+                        Total
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="bodyTablaDetalle">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br />
+
+        @*<input type="number" id="totalPrecio" class="form-control row col-md-4" style="text-align: right" value="0" />*@
+
+        <br />
+
+    </div>
+    @* Parte de Inventario *@
+    <div id="menuPro" class="tab-pane fade">
+        <h3>Productos de Inventario</h3>
+        <table id="grid" class="table table-hover-table-bordered display dataTable">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Inventario.First().Producto.NombreProducto)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Inventario.First().TipoInventario.NombresTipoInventario)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Inventario.First().CantidaExistencia)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Inventario.First().Producto.PrecioXUnidad)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Inventario)
+                {
+                    <tr data-idproducto="@item.IdInventario">
+                        <td id="Nombre_@ViewBag.Min">
+                            @Html.DisplayFor(modelItem => item.Producto.NombreProducto)
+                        </td>
+                        <td id="Inventario_@ViewBag.Min">
+                            @Html.DisplayFor(modelItem => item.TipoInventario.NombresTipoInventario)
+                        </td>
+                        <td id="Cantidad_@ViewBag.Min">
+                            @Html.DisplayFor(modelItem => item.CantidaExistencia)
+                        </td>
+                        <td id="Precio_@ViewBag.Min">
+                            @Html.DisplayFor(modelItem => item.Producto.PrecioXUnidad)
+                        </td>
+                        <td>
+                            <input id="Producto_@item.IdInventario" type="button" value="Agregar" onclick="agregarObjeto('Producto', @ViewBag.Min, @item.IdInventario)" class="form-control" />
+                        </td>
+                    </tr>
+
+                    ViewBag.Min++;
+
+                    if (ViewBag.Min == ViewBag.CantProductos + 1)
+                    {
+                        ViewBag.Min = 1;
+                    }
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <input type="button" value="Crear" onclick=agregarDatosDeTabla() class="btn btn-primary form-control" />
+        </div>
+    </div>
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+
+
+
+<script type="text/javascript">
+         var maxArt;
+            var cuentaDetalle = 1;
+            function DesactivarBoton(tipo, id) {
+                if (tipo.localeCompare('Producto') == 0) {
+                    $("#Producto_" + id).prop("disabled", true);
+                }
+            }
+
+            function activarBoton(tipo, id) {
+                if (tipo.localeCompare('Producto') == 0) {
+                    $("#Producto_" + id).prop("disabled", false);
+                }
+            }
+
+            function agregarObjeto(tipo, numero, id) {
+                if (tipo.localeCompare('Producto') == 0) {
+                    DesactivarBoton(tipo, id);
+                    agregarAlDetalle("-", $("#Nombre_" + numero).text(), $("#Inventario_" + numero).text(), $("#Cantidad_" + numero).text(), $("#Precio_" + numero).text(), id, "Producto");
+
+                }
+
+            }
+
+            function agregarAlDetalle(codigo, nombre, inventario, cantidad, precio, id, tipo) {
+
+                var registro = "<tr id='fila" + cuentaDetalle + "' data-id='" + id + "' data-tipo='" + tipo + "' ><td>" + cuentaDetalle + "</td><td>" + nombre + "</td><td>" + inventario + "</td><td>" + precio + "</td><td>" + cantidad +  "</td><td id='precio" + cuentaDetalle + "'>" + precio + "</td><td><input type='number' id='cantidad" + cuentaDetalle + "' onClick='cambiar(" + cuentaDetalle + ")' class='form-control' value='" + 1 + "'/></td><td id='Total" + cuentaDetalle + "'>" + precio + "</td><td ><a id='eliminar" + cuentaDetalle + "' onclick='eliminar(" + cuentaDetalle + ")'>Eliminar</a></td></tr>";
+
+                $("#bodyTablaDetalle").append(registro);
+
+                var valor = parseInt($("#totalPrecio").val()) + parseInt(precio)
+                $("#totalPrecio").val(valor);
+                cuentaDetalle++;
+            }
+
+
+            function cambiar(i) {
+                $('#cantidad' + i).change(function () {
+                    $("#Total" + i).text(parseInt($("#precio" + i).text() * parseInt($("#cantidad" + i).val())));
+                    // recalcula el total
+                    calcularTotal();
+
+                });
+            }
+
+            function calcularTotal() {
+                var valor = 0;
+                for (let j = 1; j < cuentaDetalle; j++) {
+                    valor += parseInt($("#Total" + j).text());
+                }
+
+                $("#totalPrecio").val(valor);
+            }
+
+            function eliminar(i) {
+
+                activarBoton($("#fila" + i).attr("data-tipo"), $("#fila" + i).attr("data-id"));
+                $("#fila" + i).remove();
+
+
+                if (i >= 1) {
+                    reOrdenar(i);
+                }
+                // si cuentaDetalle == 1 significa que ya no hay registros
+                if (cuentaDetalle > 1) {
+                    cuentaDetalle--;
+                }
+                calcularTotal();
+            }
+
+            function reOrdenar(j) {
+                for (let i = j; i < cuentaDetalle; i++) {
+                    $('#fila' + i).attr('id', 'fila' + (i - 1));
+
+                    //$('#fila' + i).attr('id', 'fila' + (i - 1));
+                    //$('#fila' + i).attr('id', 'fila' + (i - 1));
+
+
+                    $('#precio' + i).attr('id', 'precio' + (i - 1));
+
+                    $('#cantidad' + i).attr('onclick', 'cambiar(' + (i - 1) + ')');
+                    $('#cantidad' + i).attr('id', 'cantidad' + (i - 1));
+
+
+                    $('#subTotal' + i).attr('id', 'subTotal' + (i - 1));
+
+                    $('#eliminar' + i).attr('onclick', 'eliminar(' + (i - 1) + ')');
+                    $('#eliminar' + i).attr('id', 'eliminar' + (i - 1));
+                }
+
+
+            }
+
+            function agregarDatosDeTabla() {
+                //var tabla;  // usarlo como array
+
+                var tipo, id, cantidad;
+
+                tipo = "<input type='text' id='detalleTotal' name='detalleTotal' value='" + cuentaDetalle + "' />";
+                $(".escondido").append(tipo);
+
+                for (let i = 1; i < cuentaDetalle; i++) {
+
+                    tipo = "<input type='text' id='detalleTipo" + i + "' name='detalleTipo" + i + "' value='" + $("#fila" + i).attr("data-tipo") + "' />";
+                    $(".escondido").append(tipo);
+
+                    id = "<input type='text' id='detalleId" + i + "' name='detalleId" + i + "' value='" + $("#fila" + i).attr("data-id") + "' />";
+                    $(".escondido").append(id);
+
+                    cantidad = "<input type='text' id='detalleCantidad" + i + "' name='detalleCantidad" + i + "' value='" + $('#cantidad' + i).val() + "' />";
+                    $(".escondido").append(cantidad);
+
+                    //  tipo                                   id                           cantidad
+                    //tabla[i] = [$("#fila" + i).attr("data-tipo"), $("#fila" + i).attr("data-id"),$('#cantidad' + i).val()];
+                }
+
+                $("#enviar").trigger("click");
+
+
+            }
+
+            function mostrarOrdenes(i) {
+                $('#cliente').change(function () {
+                    // ver como agregar la lista aqui
+
+                    $("#ordenes" + i).text(parseInt($("#precio" + i).text() * parseInt($("#cantidad" + i).val())));
+                    // recalcula el total
+                    calcularTotal();
+
+                });
+            }
+    </script>
+@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

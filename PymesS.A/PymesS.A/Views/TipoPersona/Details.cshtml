@@ -1,0 +1,44 @@
+﻿@model Entity.TipoPersona
+
+@{
+    ViewBag.Title = "Detalles de tipo persona";
+    Layout = "~/Views/Shared/_Menubar.cshtml";
+}
+
+<div class="container-fluid" style="position:relative; top:20px; right:-300px;">
+    <div class="row">
+        <div class="col-md-9">
+            <ol class="breadcrumb">
+                <li><a href="~/">TipoPersona</a></li>
+                <li class="active">@(Model.NombresTipoPersona)</li>
+            </ol>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.NombresTipoPersona)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NombresTipoPersona)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.activo)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.activo)
+                </dd>
+
+
+            </dl>
+            <p>
+                <a class="btn btn-primary" href="~/TipoPersona/Edit/@Model.IdTipoPersona" title="Editar">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </a>
+                <a href="~/TipoPersona/Index" class="btn btn-success">Regresar a Lista</a>
+            </p>
+        </div>
+        
+        </div>
+</div>

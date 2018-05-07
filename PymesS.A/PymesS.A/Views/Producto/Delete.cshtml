@@ -1,0 +1,69 @@
+﻿@model Entity.Producto
+
+@{
+    ViewBag.Title = "Eliminar Producto";
+    Layout = "~/Views/Shared/_Menubar.cshtml";
+}
+
+<div class="container-fluid" style="position:relative; top:20px; right:-400px;">
+    <div class="row">
+        <div class="col-md-9">
+            <div>
+                <h4>Producto</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.NombreProducto)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NombreProducto)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.PrecioXUnidad)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.PrecioXUnidad)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Descripcion)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Descripcion)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.activo)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.activo)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TipoProducto.NombresTipoProducto)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TipoProducto.NombresTipoProducto)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Eliminar" class="btn btn-success" />
+                        <a href="~/Producto/Index" class="btn btn-danger">Regresar a Lista</a>
+                    </div>
+                }
+            </div>
+            </div>
+</div>
+</div>

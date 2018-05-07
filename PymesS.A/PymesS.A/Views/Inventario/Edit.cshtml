@@ -1,0 +1,69 @@
+﻿@model Entity.Inventario
+
+@{
+    ViewBag.Title = "Editar Inventario";
+    Layout = "~/Views/Shared/_Menubar.cshtml";
+}
+<br />
+<br />
+<br />
+<div class="container-fluid" style="position:relative; top:-50px; right:-300px;">
+    <div class="row">
+        <div class="col-xs-10">
+            <ol class="breadcrumb">
+                <li><a href="~/Inventario/Index"><h3>Inventario</h3></a></li>
+            </ol>
+
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.IdInventario)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.IdTipoInventario, "IdTipoInventario", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("IdTipoInventario", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.IdTipoInventario, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.IdProducto, "IdProducto", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("IdProducto", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.IdProducto, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CantidaExistencia, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CantidaExistencia, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CantidaExistencia, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Grabar" class="btn btn-primary" />
+
+                            <div>
+                                <a href="~/Inventario/Index" class="btn btn-success">Regregar a Lista</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+          
+            </div>
+        </div>
+    </div>
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }

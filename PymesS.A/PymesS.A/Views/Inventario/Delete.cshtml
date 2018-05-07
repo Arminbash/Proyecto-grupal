@@ -1,0 +1,54 @@
+﻿@model Entity.Inventario
+
+@{
+    ViewBag.Title = "Eliminar Inventario";
+    Layout = "~/Views/Shared/_Menubar.cshtml";
+}
+
+
+<div class="container-fluid" style="position:relative; top:20px; right:-400px;">
+    <div class="row">
+        <div class="col-md-9">
+            <div>
+                <h4>Eliminar Inventario</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CantidaExistencia)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.CantidaExistencia)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Producto.NombreProducto)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Producto.NombreProducto)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TipoInventario.NombresTipoInventario)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TipoInventario.NombresTipoInventario)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Eliminar" class="btn btn-success" /> 
+                        <a href="~/Inventario/Index" class="btn btn-danger">Regresar a Lista</a>
+                    </div>
+                }
+            </div>
+            </div>
+</div>
+</div>

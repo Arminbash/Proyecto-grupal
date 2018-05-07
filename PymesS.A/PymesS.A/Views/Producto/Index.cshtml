@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Entity.Producto>
+
+@{
+    ViewBag.Title = "Lista de Producto";
+    Layout = "~/Views/Shared/_Menubar.cshtml";
+}
+
+<div class="container" style="position:relative; top:20px; right:-150px; width:1050px">
+    <div class="well well-sm">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Lista Producto</h2>
+
+                <div class="col-xs-2 text-right">
+                    <a class="btn btn-primary" href="~/Producto/Create">Nuevo registro</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table id="grid" class="table table-bordered">
+        <thead>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NombreProducto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PrecioXUnidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.activo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TipoProducto.NombresTipoProducto)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreProducto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrecioXUnidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.activo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoProducto.NombresTipoProducto)
+                    </td>
+                    <td class="text-left">
+                        <a class="btn btn-danger" href="~/Producto/Delete/@item.IdProducto" title="Eliminar">
+                            <i class="glyphicon glyphicon-floppy-remove"></i>
+                        </a>
+                        <a class="btn btn-success" href="~/Producto/Details/@item.IdProducto" title="Visualizar">
+                            <i class="glyphicon glyphicon-eye-open"></i>
+                        </a>
+                        <a class="btn btn-default" href="~/Producto/Edit/@item.IdProducto" title="Editar">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,64 @@
+﻿@model Entity.TipoInventario
+
+@{
+    ViewBag.Title = "Editar Inventario";
+    Layout = "~/Views/Shared/_Menubar.cshtml";
+}
+
+<br />
+<br />
+<br />
+<div class="container-fluid" style="position:relative; top:-50px; right:-300px;">
+    <div class="row">
+        <div class="col-xs-10">
+            <ol class="breadcrumb">
+                <li><a href="~/TipoInventario/TipoInventarioActi"><h3>Editar Inventario</h3></a></li>
+            </ol>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                  
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.IdTipoInventario)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.NombresTipoInventario, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.NombresTipoInventario, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.NombresTipoInventario, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.activo, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.activo)
+                                @Html.ValidationMessageFor(model => model.activo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Grabar" class="btn btn-primary" />
+
+                            <div>
+                                <a href="~/TipoInventario/TipoInventarioActi" class="btn btn-success">Regregar a Lista</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            </div>
+        </div>
+    </div>
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }

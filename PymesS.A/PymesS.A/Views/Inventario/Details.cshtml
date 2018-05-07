@@ -1,0 +1,60 @@
+﻿@model Entity.Inventario
+
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_Menubar.cshtml";
+}
+
+
+<div class="container-fluid" style="position:relative; top:20px; right:-300px;">
+    <div class="row">
+        <div class="col-md-9">
+            <ol class="breadcrumb">
+                <li><a href="~/">Inventario</a></li>
+                <li class="active">@(Model.Producto.NombreProducto +" "+ Model.CantidaExistencia)</li>
+            </ol>
+            <div>
+                <h4>Detalles de inventario</h4>
+                <div>
+
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.CantidaExistencia)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.CantidaExistencia)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Producto.NombreProducto)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Producto.NombreProducto)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TipoInventario.NombresTipoInventario)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.TipoInventario.NombresTipoInventario)
+                        </dd>
+
+
+                    </dl>
+                    <p>
+                        <a class="btn btn-primary" href="~/Inventario/Edit/@Model.IdInventario" title="Editar">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </a>
+                        <a href="~/Inventario/Index" class="btn btn-success">Regresar a Lista</a>
+                    </p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                
+

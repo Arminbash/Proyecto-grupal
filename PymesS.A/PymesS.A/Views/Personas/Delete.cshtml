@@ -1,0 +1,87 @@
+﻿@model Entity.Persona
+
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_Menubar.cshtml";
+}
+
+<h2>Eliminar Persona</h2>
+
+<div class="container-fluid" style="position:relative; top:20px; right:-400px;">
+    <div class="row">
+        <div class="col-md-9">
+            <div>
+                <h4>Persona</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Nombre)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Apellido)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Apellido)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Cedula)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Cedula)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Direccion)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Direccion)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.activo)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.activo)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TipoPersona.NombresTipoPersona)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TipoPersona.NombresTipoPersona)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Usuario.NombresUsuario)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Usuario.NombresUsuario)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input  type="submit" value="Eliminar" class="btn btn-success" /> 
+                        <a href="~/Personas/Index" class="btn btn-danger">Regresar a Lista</a>
+                    </div>
+                }
+            </div>
+            </div>
+</div>
+</div>

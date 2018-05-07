@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Entity.TipoPersona>
+
+@{
+    ViewBag.Title = "Lista Tipo";
+    Layout = "~/Views/Shared/_Menubar.cshtml";
+}
+<div class="container" style="position:relative; top:20px; right:-160px; width:1000px">
+    <div class="well well-sm">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Tipo de Persona</h2>
+
+                <div class="col-xs-2 text-right">
+                    <a class="btn btn-primary" href="~/TipoPersona/Create">Nuevo registro</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table id="grid" class="table table-bordered">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombresTipoPersona)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.activo)
+            </th>
+            <th></th>
+        </tr>
+            </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombresTipoPersona)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.activo)
+                </td>
+                <td class="text-left">
+                    <a class="btn btn-danger" href="~/TipoPersona/Delete/@item.IdTipoPersona" title="Eliminar">
+                        <i class="glyphicon glyphicon-floppy-remove"></i>
+                    </a>
+                    <a class="btn btn-success" href="~/TipoPersona/Details/@item.IdTipoPersona" title="Visualizar">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                    </a>
+                    <a class="btn btn-default" href="~/TipoPersona/Edit/@item.IdTipoPersona" title="Editar">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+            </tbody>
+    </table>
+    </div>

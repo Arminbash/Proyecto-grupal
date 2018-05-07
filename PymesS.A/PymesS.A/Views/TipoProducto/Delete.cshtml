@@ -1,0 +1,47 @@
+﻿@model Entity.TipoProducto
+
+@{
+    ViewBag.Title = "Eliminar Tipo Producto";
+    Layout = "~/Views/Shared/_Menubar.cshtml";
+}
+
+<div class="container-fluid" style="position:relative; top:20px; right:-400px;">
+    <div class="row">
+        <div class="col-md-9">
+            <div>
+                <div>
+                    <h4>Tipo Producto</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.NombresTipoProducto)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.NombresTipoProducto)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.activo)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.activo)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Eliminar" class="btn btn-success" />
+                            <a href="~/TipoProducto/Index" class="btn btn-danger">Regresar a Lista</a>
+                        </div>
+                    }
+                </div>
+                </div>
+</div>
+</div>
+</div>

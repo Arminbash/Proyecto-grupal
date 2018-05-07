@@ -1,0 +1,29 @@
+﻿body {
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.navbar-inverse {
+      background-color:#337ab7 !important;
+
+ }
+
+li a:hover {
+
+    background-color:#337ab7 !important;
+    color:#ffffff;
+
+}
+
+.glyphicon {
+  position: relative;
+  top: 2px !important;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2 !important;
+  font-size:15px !important;
+  -webkit-font-smoothing: antialiased;
+}
